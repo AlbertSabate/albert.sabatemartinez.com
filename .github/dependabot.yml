@@ -1,0 +1,33 @@
+version: 2
+updates:
+  # Enable version updates for npm/bun dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+    open-pull-requests-limit: 10
+    groups:
+      # Group all TanStack dependencies together
+      tanstack:
+        patterns:
+          - "@tanstack/*"
+      # Group all development dependencies
+      dev-dependencies:
+        dependency-type: "development"
+        patterns:
+          - "*"
+      # Group all type definitions
+      types:
+        patterns:
+          - "@types/*"
+    
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+    open-pull-requests-limit: 5

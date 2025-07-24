@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Portfolio",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "title": "Senior Software Engineer",
+    "subtitle": "Building scalable solutions with modern web technologies",
+    "cta": "Get in touch",
+    "stats": {
+      "yearsExperience": "Years Experience",
+      "projectsDelivered": "Projects Delivered",
+      "usersImpacted": "Users Impacted",
+      "teamsLed": "Teams Led"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "content": "Senior Software Engineer with over ten years of international experience, including a proven track record in Singapore's fast-paced tech environment. Mastered JavaScript and TypeScript, delivering high-impact solutions across backend and frontend development."
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Showcasing innovative solutions that have impacted millions of users worldwide",
+    "cta": "Each project demonstrates my expertise in building scalable, high-performance applications"
+  },
+  "experience": {
+    "title": "Experience",
+    "current": "Present"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "years": "years"
+  },
+  "education": {
+    "title": "Education"
+  },
+  "certifications": {
+    "title": "Certifications"
+  },
+  "testimonials": {
+    "title": "What People Say"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "I'm always interested in new opportunities and collaborations",
+    "email": "Email",
+    "location": "Location"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

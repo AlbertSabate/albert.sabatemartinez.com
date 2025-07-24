@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Portafolio",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "title": "Ingeniero de Software Senior",
+    "subtitle": "Construyendo soluciones escalables con tecnologías web modernas",
+    "cta": "Contactar",
+    "stats": {
+      "yearsExperience": "Años de Experiencia",
+      "projectsDelivered": "Proyectos Entregados",
+      "usersImpacted": "Usuarios Impactados",
+      "teamsLed": "Equipos Liderados"
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "content": "Ingeniero de Software Senior con más de diez años de experiencia internacional, incluyendo un historial probado en el dinámico entorno tecnológico de Singapur. Dominio de JavaScript y TypeScript, entregando soluciones de alto impacto en desarrollo backend y frontend."
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Mostrando soluciones innovadoras que han impactado a millones de usuarios en todo el mundo",
+    "cta": "Cada proyecto demuestra mi experiencia en la construcción de aplicaciones escalables y de alto rendimiento"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "current": "Presente"
+  },
+  "skills": {
+    "title": "Habilidades y Tecnologías",
+    "years": "años"
+  },
+  "education": {
+    "title": "Educación"
+  },
+  "certifications": {
+    "title": "Certificaciones"
+  },
+  "testimonials": {
+    "title": "Lo que Dicen de Mí"
+  },
+  "contact": {
+    "title": "Conectemos",
+    "subtitle": "Siempre estoy interesado en nuevas oportunidades y colaboraciones",
+    "email": "Correo",
+    "location": "Ubicación"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados"
+  }
+}

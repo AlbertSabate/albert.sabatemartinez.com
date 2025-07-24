@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2025-04-12",
+  "main": ".output/server/index.mjs",
+  "workers_dev": false,
+  "name": "prod-albert-cv",
+
+  // Routes configuration
+  "routes": [
+    {
+      "pattern": "albert.sabatemartinez.com/*",
+      "zone_name": "sabatemartinez.com"
+    }
+  ],
+
+  // Environment configuration for preview deployments
+  "env": {
+    "preview": {
+      "name": "preview-albert-cv"
+    }
+  }
+}

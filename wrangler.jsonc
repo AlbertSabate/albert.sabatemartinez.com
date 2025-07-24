@@ -9,7 +9,7 @@
   // Routes configuration
   "routes": [
     {
-      "pattern": "albert.sabatemartinez.com/*",
+      "pattern": "albert.sabatemartinez.com",
       "zone_name": "sabatemartinez.com",
       "custom_domain": true
     }

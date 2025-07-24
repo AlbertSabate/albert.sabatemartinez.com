@@ -88,7 +88,8 @@ export function Projects({ data }: ProjectsProps) {
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                               />
                               <button
-                                onClick={() => setPlayingVideo(project.video)}
+                                type="button"
+                                onClick={() => setPlayingVideo(project.video || null)}
                                 className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors cursor-pointer z-10"
                                 aria-label={`Play video for ${project.title}`}
                               >
@@ -140,8 +141,8 @@ export function Projects({ data }: ProjectsProps) {
                     {/* Key Highlights */}
                     {project.highlights && project.highlights.length > 0 && (
                       <div className="mb-6 space-y-2">
-                        {project.highlights.slice(0, 2).map((highlight, i) => (
-                          <div key={i} className="flex items-start gap-2">
+                        {project.highlights.slice(0, 2).map((highlight) => (
+                          <div key={highlight} className="flex items-start gap-2">
                             <span className="text-primary mt-1">•</span>
                             <span className="text-sm text-muted-foreground">{highlight}</span>
                           </div>
@@ -196,8 +197,12 @@ export function Projects({ data }: ProjectsProps) {
           <div
             className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
             onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => e.key === "Escape" && setPlayingVideo(null)}
+            role="dialog"
+            aria-label="Video player"
           >
             <button
+              type="button"
               onClick={() => setPlayingVideo(null)}
               className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
               aria-label="Close video"

@@ -1,36 +1,54 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
   "files": {
-    "ignoreUnknown": false,
-    "experimentalScannerIgnores": ["node_modules/**", "dist/**", "src/routeTree.gen.ts"]
+    "includes": [
+      "packages/**/*",
+      "apps/**/*",
+      "apis/**/*",
+      "!**/dist/**/*",
+      "!**/node_modules/**/*",
+      "!**/paraglide/**/*",
+      "!**/cache/**/*",
+      "!**/.cache/**/*",
+      "!**/.wrangler/**/*",
+      "!**/.output/**/*",
+      "!**/.tanstack/**/*",
+      "!**/routeTree.gen.ts",
+      "!**/.nitro/**/*",
+      "!**/.vinxi/**/*",
+      "!**/.env/**/*"
+    ]
   },
   "formatter": {
     "enabled": true,
+    "useEditorconfig": true,
     "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
+    "lineEnding": "lf",
     "lineWidth": 120,
-    "lineEnding": "lf"
+    "attributePosition": "auto"
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
-      "complexity": {
-        "noForEach": "off"
-      },
-      "style": {
-        "noNonNullAssertion": "off"
-      }
+      "recommended": true
     }
   },
   "javascript": {
+    "assist": {
+      "enabled": true
+    },
     "formatter": {
-      "quoteStyle": "double",
       "jsxQuoteStyle": "double",
-      "semicolons": "always",
+      "quoteProperties": "asNeeded",
       "trailingCommas": "all",
-      "arrowParentheses": "always"
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
     }
   }
 }

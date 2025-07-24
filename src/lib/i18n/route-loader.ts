@@ -14,6 +14,7 @@ export async function loadI18nForRoute(params: { locale?: string }) {
 
 export function setLocaleCookie(locale: Locale) {
   if (typeof document !== "undefined") {
+    // biome-ignore lint/suspicious/noDocumentCookie: Necessary for locale persistence
     document.cookie = createLocaleCookie(locale);
   }
 }

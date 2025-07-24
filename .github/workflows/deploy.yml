@@ -54,10 +54,14 @@ jobs:
           bun run typecheck
           echo "✅ TypeScript compilation successful!"
 
-  build:
-    name: 🏗️ Build Application
+  deploy-production:
+    name: 🚀 Deploy to Production
     needs: code-quality
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://albert.sabatemartinez.com
     
     steps:
       - name: 📥 Checkout Repository
@@ -66,7 +70,7 @@ jobs:
       - name: 🏗️ Setup Bun Runtime
         uses: oven-sh/setup-bun@v2
         
-      - name: 📦 Restore Cache
+      - name: 📦 Cache Dependencies
         uses: actions/cache@v4
         with:
           path: ~/.bun/install/cache
@@ -81,35 +85,6 @@ jobs:
           bun run build
           echo "✅ Build completed successfully!"
           
-      - name: 📤 Upload Build Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifacts
-          path: dist/
-          retention-days: 7
-
-  deploy-production:
-    name: 🚀 Deploy to Production
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: https://albert.sabatemartinez.com
-    
-    steps:
-      - name: 📥 Checkout Repository
-        uses: actions/checkout@v4
-        
-      - name: 🏗️ Setup Bun Runtime
-        uses: oven-sh/setup-bun@v2
-        
-      - name: 📥 Download Build Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifacts
-          path: dist/
-          
       - name: 🌍 Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
@@ -123,7 +98,7 @@ jobs:
 
   deploy-preview:
     name: 👁️ Deploy Preview
-    needs: build
+    needs: code-quality
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     environment:
@@ -136,11 +111,20 @@ jobs:
       - name: 🏗️ Setup Bun Runtime
         uses: oven-sh/setup-bun@v2
         
-      - name: 📥 Download Build Artifacts
-        uses: actions/download-artifact@v4
+      - name: 📦 Cache Dependencies
+        uses: actions/cache@v4
         with:
-          name: build-artifacts
-          path: dist/
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          
+      - name: 📥 Install Dependencies
+        run: bun install --frozen-lockfile
+        
+      - name: 🔨 Build Application
+        run: |
+          echo "🔨 Building application..."
+          bun run build
+          echo "✅ Build completed successfully!"
           
       - name: 👁️ Deploy Preview to Cloudflare
         id: preview-deploy

@@ -161,6 +161,7 @@ jobs:
         with:
           script: |
             const url = '${{ steps.preview-deploy.outputs.deployment-url }}';
+            const shortSha = '${{ github.sha }}'.substring(0, 7);
             const comment = `## 🚀 Preview Deployment Ready!
             
             Your changes have been deployed to a preview environment:
@@ -168,7 +169,7 @@ jobs:
             🔗 **Preview URL:** ${url}
             
             ### 📋 Deployment Details
-            - **Commit:** \`${{ github.sha.substring(0, 7) }}\`
+            - **Commit:** \`${shortSha}\`
             - **Branch:** \`${{ github.head_ref }}\`
             - **Triggered by:** @${{ github.actor }}
             

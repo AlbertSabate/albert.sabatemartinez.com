@@ -56,7 +56,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       },
       { rel: 'manifest', href: '/site.webmanifest', color: '#0b2027' },
       { rel: 'shortcut icon', href: '/favicon.ico' },
-      { rel: 'icon', type: 'image/svg+xml', href: '/logo/favicon.svg' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/logo/logo.svg' },
     ],
   }),
 });

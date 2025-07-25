@@ -37,6 +37,26 @@ export const Route = createRootRouteWithContext<RouterContext>()({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap",
       },
+      {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/icons/apple-touch-icon.png',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '96x96',
+          href: '/icons/android-chrome-96x96.png',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '16x16',
+          href: '/icons/favicon-16x16.png',
+        },
+        { rel: 'manifest', href: '/site.webmanifest', color: '#0b2027' },
+        { rel: 'shortcut icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/logo/favicon.svg' },
     ],
   }),
 });

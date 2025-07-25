@@ -5,8 +5,14 @@
   "main": ".output/server/index.mjs",
   "workers_dev": false,
   "name": "prod-albert-cv",
-
-  // Routes configuration
+  "assets": {
+    "directory": ".output/public/",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
   "routes": [
     {
       "pattern": "albert.sabatemartinez.com",

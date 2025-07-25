@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { useTranslation } from "@/lib/i18n/use-translation";
+import { Link } from '@tanstack/react-router';
+import { useTranslation } from '@/lib/i18n/use-translation';
 
 export function NotFound() {
   const { locale } = useTranslation();

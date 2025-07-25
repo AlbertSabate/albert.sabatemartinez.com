@@ -1,7 +1,7 @@
-import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
-import { defaultLocale } from "@/lib/i18n/config";
+import { createFileRoute, Outlet, redirect } from '@tanstack/react-router';
+import { defaultLocale } from '@/lib/i18n/config';
 
-export const Route = createFileRoute("/{-$locale}")({
+export const Route = createFileRoute('/{-$locale}')({
   component: LocaleRoute,
   beforeLoad: async ({ params, context }) => {
     const urlLocale = params.locale;
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/{-$locale}")({
     // if !urlLocale && detectedLocale !== defaultLocale ? redirect to default
     if (!urlLocale && detectedLocale !== defaultLocale) {
       throw redirect({
-        to: "/{-$locale}",
+        to: '/{-$locale}',
         params: { locale: detectedLocale },
         replace: true,
       });

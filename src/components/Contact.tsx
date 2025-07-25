@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin } from "lucide-react";
-import { useTranslation } from "@/lib/i18n/use-translation";
-import type { ProfileData } from "@/types";
+import { motion } from 'framer-motion';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n/use-translation';
+import type { ProfileData } from '@/types';
 
 interface ContactProps {
-  data: ProfileData["personal"];
+  data: ProfileData['personal'];
 }
 
 export function Contact({ data }: ContactProps) {
@@ -20,8 +20,8 @@ export function Contact({ data }: ContactProps) {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold font-headings mb-4">{t("contact.title")}</h2>
-          <p className="text-muted-foreground mb-12">{t("contact.subtitle")}</p>
+          <h2 className="text-3xl font-bold font-headings mb-4">{t('contact.title')}</h2>
+          <p className="text-muted-foreground mb-12">{t('contact.subtitle')}</p>
 
           <div className="grid sm:grid-cols-2 gap-8 mb-12">
             <motion.a
@@ -34,7 +34,7 @@ export function Contact({ data }: ContactProps) {
             >
               <Mail className="h-6 w-6 text-primary" />
               <div className="text-left">
-                <p className="text-sm text-muted-foreground">{t("contact.email")}</p>
+                <p className="text-sm text-muted-foreground">{t('contact.email')}</p>
                 <p className="font-medium">albert@sabatemartinez.com</p>
               </div>
             </motion.a>
@@ -48,7 +48,7 @@ export function Contact({ data }: ContactProps) {
             >
               <MapPin className="h-6 w-6 text-primary" />
               <div className="text-left">
-                <p className="text-sm text-muted-foreground">{t("contact.location")}</p>
+                <p className="text-sm text-muted-foreground">{t('contact.location')}</p>
                 <p className="font-medium">
                   {data.location.city}, {data.location.country}
                 </p>

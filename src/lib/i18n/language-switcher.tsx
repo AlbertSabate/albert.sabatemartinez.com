@@ -1,13 +1,13 @@
-import { useParams } from "@tanstack/react-router";
-import { Globe } from "lucide-react";
-import { cn } from "@/utils/cn";
-import { type Locale, localeNames, locales } from "./config";
-import { setLocaleCookie } from "./route-loader";
-import { getLocalizedUrl, removeLocaleFromPathname } from "./utils";
+import { useParams } from '@tanstack/react-router';
+import { Globe } from 'lucide-react';
+import { cn } from '@/utils/cn';
+import { type Locale, localeNames, locales } from './config';
+import { setLocaleCookie } from './route-loader';
+import { getLocalizedUrl, removeLocaleFromPathname } from './utils';
 
 export function LanguageSwitcher({ className }: { className?: string }) {
   const params = useParams({ strict: false });
-  const currentLocale = (params.locale as Locale) || "en";
+  const currentLocale = (params.locale as Locale) || 'en';
 
   const handleLocaleChange = (newLocale: Locale) => {
     setLocaleCookie(newLocale);
@@ -20,7 +20,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
   };
 
   return (
-    <div className={cn("relative group", className)}>
+    <div className={cn('relative group', className)}>
       <button
         type="button"
         className="flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors hover:text-primary"
@@ -39,8 +39,8 @@ export function LanguageSwitcher({ className }: { className?: string }) {
                 key={locale}
                 onClick={() => handleLocaleChange(locale)}
                 className={cn(
-                  "block w-full px-4 py-2 text-left text-sm hover:bg-muted",
-                  currentLocale === locale && "bg-muted font-medium",
+                  'block w-full px-4 py-2 text-left text-sm hover:bg-muted',
+                  currentLocale === locale && 'bg-muted font-medium',
                 )}
               >
                 {localeNames[locale]}

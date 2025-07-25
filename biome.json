@@ -1,23 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
   "files": {
-    "includes": [
-      "packages/**/*",
-      "apps/**/*",
-      "apis/**/*",
-      "!**/dist/**/*",
-      "!**/node_modules/**/*",
-      "!**/paraglide/**/*",
-      "!**/cache/**/*",
-      "!**/.cache/**/*",
-      "!**/.wrangler/**/*",
-      "!**/.output/**/*",
-      "!**/.tanstack/**/*",
-      "!**/routeTree.gen.ts",
-      "!**/.nitro/**/*",
-      "!**/.vinxi/**/*",
-      "!**/.env/**/*"
-    ]
+    "includes": ["src/**/*", "vite.config.ts", "!**/routeTree.gen.ts"]
   },
   "formatter": {
     "enabled": true,

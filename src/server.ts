@@ -1,7 +1,7 @@
-import { createStartHandler, defaultStreamHandler, requestHandler } from "@tanstack/react-start/server";
-import { loadTranslations } from "./lib/i18n/loader";
-import { getLocaleFromRequest } from "./lib/i18n/server";
-import { createRouter } from "./router";
+import { createStartHandler, defaultStreamHandler, requestHandler } from '@tanstack/react-start/server';
+import { loadTranslations } from './lib/i18n/loader';
+import { getLocaleFromRequest } from './lib/i18n/server';
+import { createRouter } from './router';
 
 export default requestHandler(async (ctx) => {
   const locale = getLocaleFromRequest(ctx.request);

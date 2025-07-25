@@ -1,9 +1,9 @@
-import { StartClient } from "@tanstack/react-start";
-import { StrictMode } from "react";
-import { hydrateRoot } from "react-dom/client";
-import { defaultLocale, isValidLocale, type Locale } from "./lib/i18n/config";
-import { loadTranslations } from "./lib/i18n/loader";
-import { createRouter } from "./router";
+import { StartClient } from '@tanstack/react-start';
+import { StrictMode } from 'react';
+import { hydrateRoot } from 'react-dom/client';
+import { defaultLocale, isValidLocale, type Locale } from './lib/i18n/config';
+import { loadTranslations } from './lib/i18n/loader';
+import { createRouter } from './router';
 
 // Get locale from the current page
 async function initializeClient() {

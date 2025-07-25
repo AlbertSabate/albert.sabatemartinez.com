@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useTranslation } from "@/lib/i18n/use-translation";
+import { motion } from 'framer-motion';
+import { useTranslation } from '@/lib/i18n/use-translation';
 
 interface AboutProps {
   data: string;
@@ -17,7 +17,7 @@ export function About({ data }: AboutProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold font-headings text-center mb-12">{t("about.title")}</h2>
+          <h2 className="text-3xl font-bold font-headings text-center mb-12">{t('about.title')}</h2>
           <div className="prose prose-lg mx-auto text-muted-foreground">
             <p>{data}</p>
           </div>

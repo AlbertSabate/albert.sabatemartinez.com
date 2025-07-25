@@ -1,5 +1,5 @@
-import { useParams } from "@tanstack/react-router";
-import { defaultLocale, isValidLocale, type Locale } from "./config";
+import { useParams } from '@tanstack/react-router';
+import { defaultLocale, isValidLocale, type Locale } from './config';
 
 export function useLocale(): Locale {
   const params = useParams({ strict: false });

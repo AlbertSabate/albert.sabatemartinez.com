@@ -1,11 +1,11 @@
-import { defaultLocale, isValidLocale, type Locale } from "./config";
+import { defaultLocale, isValidLocale, type Locale } from './config';
 
-const LOCALE_COOKIE_NAME = "locale";
+const LOCALE_COOKIE_NAME = 'locale';
 
 export function getLocaleFromRequest(request: Request): Locale {
   // 1. Check URL pathname
   const url = new URL(request.url);
-  const pathSegments = url.pathname.split("/").filter(Boolean);
+  const pathSegments = url.pathname.split('/').filter(Boolean);
   const pathLocale = pathSegments[0];
 
   if (pathLocale && isValidLocale(pathLocale)) {
@@ -13,7 +13,7 @@ export function getLocaleFromRequest(request: Request): Locale {
   }
 
   // 2. Check cookie
-  const cookieHeader = request.headers.get("cookie");
+  const cookieHeader = request.headers.get('cookie');
   if (cookieHeader) {
     const cookies = parseCookies(cookieHeader);
     const cookieLocale = cookies[LOCALE_COOKIE_NAME];
@@ -23,7 +23,7 @@ export function getLocaleFromRequest(request: Request): Locale {
   }
 
   // 3. Check Accept-Language header
-  const acceptLanguage = request.headers.get("accept-language");
+  const acceptLanguage = request.headers.get('accept-language');
   if (acceptLanguage) {
     const detectedLocale = parseAcceptLanguage(acceptLanguage);
     if (detectedLocale) {
@@ -37,8 +37,8 @@ export function getLocaleFromRequest(request: Request): Locale {
 
 function parseCookies(cookieHeader: string): Record<string, string> {
   const cookies: Record<string, string> = {};
-  cookieHeader.split(";").forEach((cookie) => {
-    const [name, value] = cookie.trim().split("=");
+  cookieHeader.split(';').forEach((cookie) => {
+    const [name, value] = cookie.trim().split('=');
     if (name && value) {
       cookies[name] = decodeURIComponent(value);
     }
@@ -48,11 +48,11 @@ function parseCookies(cookieHeader: string): Record<string, string> {
 
 function parseAcceptLanguage(acceptLanguage: string): Locale | null {
   const languages = acceptLanguage
-    .split(",")
+    .split(',')
     .map((lang) => {
-      const [code, quality] = lang.trim().split(";q=");
+      const [code, quality] = lang.trim().split(';q=');
       return {
-        code: code.toLowerCase().split("-")[0],
+        code: code.toLowerCase().split('-')[0],
         quality: quality ? Number.parseFloat(quality) : 1,
       };
     })

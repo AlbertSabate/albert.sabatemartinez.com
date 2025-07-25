@@ -1,6 +1,6 @@
-import { useMemo } from "react";
-import { useI18nContext } from "./context";
-import { translate } from "./loader";
+import { useMemo } from 'react';
+import { useI18nContext } from './context';
+import { translate } from './loader';
 
 export function useTranslation() {
   const { locale, translations } = useI18nContext();

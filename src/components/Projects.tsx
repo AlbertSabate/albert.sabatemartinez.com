@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
-import { ArrowUpRight, Award, Calendar, Github, Play, Users, X } from "lucide-react";
-import { useState } from "react";
-import { useTranslation } from "@/lib/i18n/use-translation";
-import type { ProfileData } from "@/types";
-import { cn } from "@/utils/cn";
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Award, Calendar, Github, Play, Users, X } from 'lucide-react';
+import { useState } from 'react';
+import { useTranslation } from '@/lib/i18n/use-translation';
+import type { ProfileData } from '@/types';
+import { cn } from '@/utils/cn';
 
 interface ProjectsProps {
-  data: ProfileData["projects"];
+  data: ProfileData['projects'];
 }
 
 export function Projects({ data }: ProjectsProps) {
@@ -14,10 +14,10 @@ export function Projects({ data }: ProjectsProps) {
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
 
   const getProjectIcon = (title: string) => {
-    if (title.includes("Binance") || title.includes("Alipay") || title.includes("Grab")) {
+    if (title.includes('Binance') || title.includes('Alipay') || title.includes('Grab')) {
       return <Users className="h-5 w-5" />;
     }
-    if (title.includes("Framework") || title.includes("Brisa")) {
+    if (title.includes('Framework') || title.includes('Brisa')) {
       return <Github className="h-5 w-5" />;
     }
     return <Award className="h-5 w-5" />;
@@ -40,8 +40,8 @@ export function Projects({ data }: ProjectsProps) {
           transition={{ duration: 0.5 }}
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold font-headings mb-4">{t("projects.title")}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("projects.subtitle")}</p>
+            <h2 className="text-3xl sm:text-4xl font-bold font-headings mb-4">{t('projects.title')}</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t('projects.subtitle')}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -57,8 +57,8 @@ export function Projects({ data }: ProjectsProps) {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={cn(
-                    "group relative bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col",
-                    index === 0 && "lg:col-span-2", // Feature the first project
+                    'group relative bg-background rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col',
+                    index === 0 && 'lg:col-span-2', // Feature the first project
                   )}
                 >
                   {/* Media Section */}
@@ -135,7 +135,7 @@ export function Projects({ data }: ProjectsProps) {
                     </div>
 
                     <p className="text-muted-foreground mb-6 line-clamp-3 flex-1">
-                      {project.description.split("\n")[0]}
+                      {project.description.split('\n')[0]}
                     </p>
 
                     {/* Key Highlights */}
@@ -180,7 +180,7 @@ export function Projects({ data }: ProjectsProps) {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-12 text-center"
           >
-            <p className="text-lg text-muted-foreground">{t("projects.cta")}</p>
+            <p className="text-lg text-muted-foreground">{t('projects.cta')}</p>
           </motion.div>
         </motion.div>
       </div>
@@ -197,7 +197,7 @@ export function Projects({ data }: ProjectsProps) {
           <div
             className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
             onClick={(e) => e.stopPropagation()}
-            onKeyDown={(e) => e.key === "Escape" && setPlayingVideo(null)}
+            onKeyDown={(e) => e.key === 'Escape' && setPlayingVideo(null)}
             role="dialog"
             aria-label="Video player"
           >

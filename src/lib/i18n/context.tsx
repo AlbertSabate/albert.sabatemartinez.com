@@ -1,5 +1,5 @@
-import { createContext, type ReactNode, useContext } from "react";
-import type { Locale } from "./config";
+import { createContext, type ReactNode, useContext } from 'react';
+import type { Locale } from './config';
 
 interface I18nContextValue {
   locale: Locale;
@@ -21,7 +21,7 @@ export function I18nProvider({ children, locale, translations }: I18nProviderPro
 export function useI18nContext() {
   const context = useContext(I18nContext);
   if (!context) {
-    throw new Error("useI18nContext must be used within I18nProvider");
+    throw new Error('useI18nContext must be used within I18nProvider');
   }
   return context;
 }

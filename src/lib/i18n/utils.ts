@@ -1,7 +1,7 @@
-import { defaultLocale, type Locale } from "./config";
+import { defaultLocale, type Locale } from './config';
 
 export function getLocalizedUrl(path: string, locale: Locale): string {
-  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
 
   if (locale === defaultLocale) {
     return cleanPath;
@@ -11,7 +11,7 @@ export function getLocalizedUrl(path: string, locale: Locale): string {
 }
 
 export function getLocaleFromPathname(pathname: string): Locale | null {
-  const segments = pathname.split("/").filter(Boolean);
+  const segments = pathname.split('/').filter(Boolean);
   const firstSegment = segments[0];
 
   if (!firstSegment) {
@@ -22,17 +22,17 @@ export function getLocaleFromPathname(pathname: string): Locale | null {
 }
 
 export function removeLocaleFromPathname(pathname: string): string {
-  const segments = pathname.split("/").filter(Boolean);
+  const segments = pathname.split('/').filter(Boolean);
   const firstSegment = segments[0];
 
-  if (firstSegment && (firstSegment === "en" || firstSegment === "es")) {
-    return `/${segments.slice(1).join("/")}`;
+  if (firstSegment && (firstSegment === 'en' || firstSegment === 'es')) {
+    return `/${segments.slice(1).join('/')}`;
   }
 
   return pathname;
 }
 
-export function getTextDirection(_locale: Locale): "ltr" | "rtl" {
+export function getTextDirection(_locale: Locale): 'ltr' | 'rtl' {
   // For now, all supported locales are LTR
-  return "ltr";
+  return 'ltr';
 }

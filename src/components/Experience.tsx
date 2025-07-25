@@ -1,19 +1,19 @@
-import { motion } from "framer-motion";
-import { Briefcase, Calendar } from "lucide-react";
-import { useTranslation } from "@/lib/i18n/use-translation";
-import type { ProfileData } from "@/types";
+import { motion } from 'framer-motion';
+import { Briefcase, Calendar } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n/use-translation';
+import type { ProfileData } from '@/types';
 
 interface ExperienceProps {
-  data: ProfileData["experience"];
+  data: ProfileData['experience'];
 }
 
 export function Experience({ data }: ExperienceProps) {
   const { t } = useTranslation();
 
   const formatDate = (date: string | null) => {
-    if (!date) return t("experience.current");
+    if (!date) return t('experience.current');
     const d = new Date(date);
-    return d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
   };
 
   return (
@@ -25,7 +25,7 @@ export function Experience({ data }: ExperienceProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold font-headings text-center mb-12">{t("experience.title")}</h2>
+          <h2 className="text-3xl font-bold font-headings text-center mb-12">{t('experience.title')}</h2>
 
           <div className="space-y-8">
             {data.map((exp) => (

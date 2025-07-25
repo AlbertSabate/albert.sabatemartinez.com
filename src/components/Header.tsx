@@ -1,9 +1,9 @@
-import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
-import { LanguageSwitcher } from "@/lib/i18n/language-switcher";
-import { useTranslation } from "@/lib/i18n/use-translation";
-import { cn } from "@/utils/cn";
+import { Link } from '@tanstack/react-router';
+import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { LanguageSwitcher } from '@/lib/i18n/language-switcher';
+import { useTranslation } from '@/lib/i18n/use-translation';
+import { cn } from '@/utils/cn';
 
 export function Header() {
   const { t, locale } = useTranslation();
@@ -14,23 +14,23 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
-    { href: "#about", label: t("nav.about") },
-    { href: "#projects", label: t("nav.projects") },
-    { href: "#experience", label: t("nav.experience") },
-    { href: "#skills", label: t("nav.skills") },
-    { href: "#contact", label: t("nav.contact") },
+    { href: '#about', label: t('nav.about') },
+    { href: '#projects', label: t('nav.projects') },
+    { href: '#experience', label: t('nav.experience') },
+    { href: '#skills', label: t('nav.skills') },
+    { href: '#contact', label: t('nav.contact') },
   ];
 
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent",
+        'fixed top-0 z-50 w-full transition-all duration-300',
+        isScrolled ? 'bg-background/80 backdrop-blur-md shadow-sm' : 'bg-transparent',
       )}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

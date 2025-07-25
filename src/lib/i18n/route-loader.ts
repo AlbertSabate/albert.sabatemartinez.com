@@ -1,6 +1,6 @@
-import { defaultLocale, isValidLocale, type Locale } from "./config";
-import { loadTranslations } from "./loader";
-import { createLocaleCookie } from "./server";
+import { defaultLocale, isValidLocale, type Locale } from './config';
+import { loadTranslations } from './loader';
+import { createLocaleCookie } from './server';
 
 export async function loadI18nForRoute(params: { locale?: string }) {
   const locale = params.locale && isValidLocale(params.locale) ? params.locale : defaultLocale;
@@ -13,7 +13,7 @@ export async function loadI18nForRoute(params: { locale?: string }) {
 }
 
 export function setLocaleCookie(locale: Locale) {
-  if (typeof document !== "undefined") {
+  if (typeof document !== 'undefined') {
     // biome-ignore lint/suspicious/noDocumentCookie: Necessary for locale persistence
     document.cookie = createLocaleCookie(locale);
   }

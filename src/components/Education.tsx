@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
-import { Award, Calendar, GraduationCap } from "lucide-react";
-import { useTranslation } from "@/lib/i18n/use-translation";
-import type { ProfileData } from "@/types";
+import { motion } from 'framer-motion';
+import { Award, Calendar, GraduationCap } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n/use-translation';
+import type { ProfileData } from '@/types';
 
 interface EducationProps {
-  data: ProfileData["education"];
-  certifications: ProfileData["certifications"];
+  data: ProfileData['education'];
+  certifications: ProfileData['certifications'];
 }
 
 export function Education({ data, certifications }: EducationProps) {
@@ -13,7 +13,7 @@ export function Education({ data, certifications }: EducationProps) {
 
   const formatDate = (date: string) => {
     const d = new Date(date);
-    return d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
   };
 
   return (
@@ -27,7 +27,7 @@ export function Education({ data, certifications }: EducationProps) {
           className="space-y-16"
         >
           <div>
-            <h2 className="text-3xl font-bold font-headings text-center mb-12">{t("education.title")}</h2>
+            <h2 className="text-3xl font-bold font-headings text-center mb-12">{t('education.title')}</h2>
 
             <div className="space-y-6">
               {data.map((edu) => (
@@ -61,7 +61,7 @@ export function Education({ data, certifications }: EducationProps) {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold font-headings text-center mb-12">{t("certifications.title")}</h2>
+            <h2 className="text-3xl font-bold font-headings text-center mb-12">{t('certifications.title')}</h2>
 
             <div className="grid md:grid-cols-2 gap-6">
               {certifications.map((cert) => (

@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
-import { useTranslation } from "@/lib/i18n/use-translation";
-import type { ProfileData } from "@/types";
+import { motion } from 'framer-motion';
+import { Quote } from 'lucide-react';
+import { useTranslation } from '@/lib/i18n/use-translation';
+import type { ProfileData } from '@/types';
 
 interface TestimonialsProps {
-  data: ProfileData["testimonials"];
+  data: ProfileData['testimonials'];
 }
 
 export function Testimonials({ data }: TestimonialsProps) {
@@ -19,7 +19,7 @@ export function Testimonials({ data }: TestimonialsProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold font-headings text-center mb-12">{t("testimonials.title")}</h2>
+          <h2 className="text-3xl font-bold font-headings text-center mb-12">{t('testimonials.title')}</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {data.map((testimonial) => (

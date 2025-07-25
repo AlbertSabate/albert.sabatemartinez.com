@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import { useTranslation } from "@/lib/i18n/use-translation";
-import type { ProfileData } from "@/types";
+import { motion } from 'framer-motion';
+import { useTranslation } from '@/lib/i18n/use-translation';
+import type { ProfileData } from '@/types';
 
 interface SkillsProps {
-  data: ProfileData["skills"];
+  data: ProfileData['skills'];
 }
 
 export function Skills({ data }: SkillsProps) {
@@ -23,7 +23,7 @@ export function Skills({ data }: SkillsProps) {
         <div className="flex justify-between items-center">
           <span className="font-medium">{skill.name}</span>
           <span className="text-sm text-muted-foreground">
-            {skill.years} {t("skills.years")}
+            {skill.years} {t('skills.years')}
           </span>
         </div>
         <div className="h-2 bg-muted rounded-full overflow-hidden">
@@ -48,7 +48,7 @@ export function Skills({ data }: SkillsProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold font-headings text-center mb-12">{t("skills.title")}</h2>
+          <h2 className="text-3xl font-bold font-headings text-center mb-12">{t('skills.title')}</h2>
 
           <div className="grid md:grid-cols-2 gap-12">
             <div>

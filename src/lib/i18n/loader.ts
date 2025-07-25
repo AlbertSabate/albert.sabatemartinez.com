@@ -1,17 +1,17 @@
-import type { Locale } from "./config";
+import type { Locale } from './config';
 
 const translationCache = new Map<Locale, Record<string, string>>();
 
 function flattenTranslations(
   obj: Record<string, unknown>,
-  prefix = "",
+  prefix = '',
   result: Record<string, string> = {},
 ): Record<string, string> {
   for (const key in obj) {
     const value = obj[key];
     const newKey = prefix ? `${prefix}.${key}` : key;
 
-    if (typeof value === "object" && value !== null && !Array.isArray(value)) {
+    if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
       flattenTranslations(value as Record<string, unknown>, newKey, result);
     } else {
       result[newKey] = String(value);
@@ -46,7 +46,7 @@ export function translate(
 
   if (params) {
     Object.entries(params).forEach(([paramKey, paramValue]) => {
-      translation = translation.replace(new RegExp(`{{\\s*${paramKey}\\s*}}`, "g"), String(paramValue));
+      translation = translation.replace(new RegExp(`{{\\s*${paramKey}\\s*}}`, 'g'), String(paramValue));
     });
   }
 

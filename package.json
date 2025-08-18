@@ -26,21 +26,21 @@
     "tailwind-merge": "3.3.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.1.2",
-    "@cloudflare/workers-types": "4.20250725.0",
+    "@biomejs/biome": "2.2.0",
+    "@cloudflare/workers-types": "4.20250816.0",
     "@playwright/test": "^1.54.1",
-    "@tailwindcss/vite": "4.1.11",
-    "@types/bun": "1.2.19",
-    "@types/node": "24.1.0",
+    "@tailwindcss/vite": "4.1.12",
+    "@types/bun": "1.2.20",
+    "@types/node": "24.3.0",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
-    "@vitejs/plugin-react": "4.7.0",
+    "@vitejs/plugin-react": "5.0.0",
     "playwright": "^1.54.1",
-    "tailwindcss": "4.1.11",
-    "typescript": "5.8.3",
-    "vite": "7.0.6",
+    "tailwindcss": "4.1.12",
+    "typescript": "5.9.2",
+    "vite": "7.1.2",
     "vite-tsconfig-paths": "5.1.4",
-    "wrangler": "4.26.0"
+    "wrangler": "4.30.0"
   },
   "engines": {
     "bun": ">=1.2.19"

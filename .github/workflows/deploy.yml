@@ -13,7 +13,7 @@ jobs:
     
     steps:
       - name: 📥 Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
         
@@ -65,7 +65,7 @@ jobs:
     
     steps:
       - name: 📥 Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         
       - name: 🏗️ Setup Bun Runtime
         uses: oven-sh/setup-bun@v2
@@ -106,7 +106,7 @@ jobs:
     
     steps:
       - name: 📥 Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         
       - name: 🏗️ Setup Bun Runtime
         uses: oven-sh/setup-bun@v2
